@@ -1,0 +1,269 @@
+Project:
+---------
+Questions more on data engineering :
+Q. data modeling with dbt + duckdb (doing partitioning, clustering and incremental loads into duckdb) it was a combination of python + sql (I used pandas and sql in jupyter notebook) after modeling and combining data, creating transformations from staging folders.
+Q. ETL orchestration with airflow, docker, python + batch processing/streaming (reading files, different types of file formats, writing reusable code, using pyspark, os, path, SaprkSession for reading files & transforming data, SparkContext was not required imo, how will you handle privacy transformations like protecting passwords, emails etc (hashlib), generating unique ids, how will you handle failures in the etl, how will you load the data into the database (I used sqlite3 + Visual studio code). This is all I remember right now.
+Q. Walkthrough of a failed pipeline you fixed — what went wrong and how you learned
+Q. What would you do if your data breaks downstream dashboards on release day?
+Q. Cross-team conflicts and delivery pressure scenarios
+Q. Addressed challenges you faced at work and how you diagnosed and resolved them.
+Q. Explored your reasons for wanting to switch from your current company.
+Q. covered CI/CD, team handling, cost optimization and best practices.
+Q. CI/CD , build pipeline vs release pipeline
+Q. agile methodology
+Q. RBAC
+
+Python:
+------
+Q. Python lambda functions, why it is faster
+Q. find the most occurrence element from the list and return a dict with that element as key and no. of occurrence as value
+input = ['a', 'b', 'c', 'd', 'c']
+output = {'c': 2}
+Q. String compression logic (run-length encoding variant)
+Q. Top K frequent elements in array
+Q. Write a Python program to (id, user_id, txn_amt,product_id)
+ (a). calculate the total amount spent, 
+ (b). identify the top 5 users based on their spending, 
+ (c). find the most purchased product.
+Q. find longest_common_prefix
+Q. Subarray sum equals target
+Q. Mini case-study: Parse messy logs from S3 and clean them using Python
+
+
+SQl:
+----
+Q. Understanding the differences between the HAVING and WHERE clauses.
+Q. Using SELF JOIN in SQL queries.
+Q. Applications of WINDOW functions.
+Q. Evaluating the benefits of indexing.
+Q. Deep SQL discussion: Optimizing window functions, performance tuning
+Q. Two tables with values and nulls, requiring the output of LEFT, RIGHT, and INNER JOIN operations.
+Q. Find top 2 products sold per category using DENSE_RANK()
+Q. second highest salary in each department,
+Q. count of days where sales volume is more than the last days for each month (I used LAG )
+Q. Identify returning users within a 7-day rolling window
+Q. Flatten nested JSON fields stored as string (think real DB messes!)
+Q. Use of CROSS APPLY and UNPIVOT in complex transformations
+
+Pyspark:
+---------
+Q. PySpark questions around data skew, caching, and UDF alternatives
+Q. Q. How to implement SCD Type 2 with SQL and spark?
+Q. Mini case-study: Parse messy logs from S3 and clean them using Python
+Q. Discussion on handling large CSV ingestion — memory vs speed tradeoffs
+Q. Flatten nested JSON fields stored as string (think real DB messes!)
+Q. Find top 2 products sold per category using DENSE_RANK()
+Q. Write a pyspark program to (id, user_id, txn_amt,product_id)
+ (a). calculate the total amount spent, 
+ (b). identify the top 5 users based on their spending, 
+ (c). find the most purchased product.
+ (d). find top 3 product bought by each user
+Q. Identify returning users within a 7-day rolling window
+Q. top 5 customer from each country based on orderamount in last 6 month.customers(customerid,country,orders,ordered,customerid),orderamoun,orderdate)
+Q. Use of CROSS APPLY and UNPIVOT in complex transformations
+
+
+Spark:
+------
+Q. Hadoop vs Spark 
+Q. execution engine in hive
+Q. Apache Spark architecture including cores, executors, jobs, stages, transformations vs. actions.
+Q. What is diff b/w dag and lineage graph
+Q. Discuss the differences between REPARTITION vs. COALESCE, optimization techniques, Delta vs. Parquet file formats, Z-Ordering, various JOIN strategies, and incremental loading using Delta file formats.
+
+Data Modelling:
+---------------
+Q. What is data modeling, why we do it?
+Q. Questions on data modeling concepts:
+(a). Choosing between fact and dimension tables for a given problem scenario.
+(b). What is star vs snowflake schema? how to choose between them?
+(b). Implementation of Slowly Changing Dimension (SCD) Type 4.
+(c). Writing a query to track historical changes in data.
+(d). Discussing different loading strategies for incoming data.
+Q. How to do incremental loads?
+Q. How is partitioning done when there is huge amounts of data coming in every minute?
+Q. How to update the refreshed data with new columns in database?
+Q. What is partitiong and clustering in redshift?
+Q. How to implement SCD Type 2 with SQL and spark?
+
+ETL/ELT/Pipeline
+----------------
+Q. What is lambda architecture?
+Q. What is medallion architecture?
+Q. Airflow architecture 
+Q. Airflow task depency
+Q. Optimisations in airflow
+Q. Airflow variable configuration
+Q. Talk about your projects where you handled huge amounts of data and how you did it? Showcase something you built outside of your work.
+Q. If we have 30Gb data stored across 60k files how will you load it optimally?
+Q. How will you read multiple files incoming in a folder with your ETL? (Write code to demonstrate how you will trigger the pipeline)
+Q. What are taskgroups(Airflow)?
+Q. When a new system is integrated, how will you carry out the integration with the existing ones?
+
+
+AWS Redshift/Bigquery:
+----------------------
+Q. Ways to compare files data for data validation
+Q. What are the ways to upload data in bq
+Q. How you will upload a 10 gb csv file in bq
+Q. How will you delete duplicates from tables in bq
+Q. Bq data types
+Q. Security features in gcp
+
+
+
+
+Azure/GCP:
+----------
+Q. CAP theorem
+5. Acid properties
+6. DWH and delta lake
+Q. discussion revolved around delta lake, time travel, vaccum, compaction and unity catalog. 
+Q. optimization techniques in delta lake
+Q. what is zorderby?
+Q. How merge operation works?
+Q. How to implement SCD Type 2 with SQL and spark?
+Q. Unity Catalog
+Q. What is delta sharing?
+Q. auto_loader in databricks?
+
+
+DE System Design:
+-----------------
+Q. Scenario: Design a robust, scalable ETL system that ingests millions of events daily, ensures data quality, and supports both batch & near real-time workloads.
+Topics discussed:
+ • Ingestion patterns (Kafka, Kinesis, S3)
+ • Orchestration (Airflow vs AWS Step Functions)
+ • Lakehouse vs warehouse architecture
+ • Schema evolution strategies (Delta Lake, Snowflake)
+ • Metadata handling, error isolation & retries
+ • Monitoring: What metrics would I track?
+Data Engineering Real Time Interview :
+——————————————————————————————
+📌 Cloud Platforms (AWS, Azure, GCP)
+📌Data Warehousing (Snowflake, Redshift, BigQuery)
+📌ETL/ELT Tools (Apache Airflow, dbt)
+📌Big Data Technologies (Hadoop, Spark, Kafka)
+📌Programming (Python, SQL, Scala)
+📌Data Modeling & Schema Design
+📌Containerization & Orchestration (Docker, Kubernetes)
+📌Data Governance & Security
+📌 Real-time Data Processing (Apache Flink, Apache Beam)
+
+https://medium.com/@seancoyne 
+=> preparation topic : https://www.youtube.com/@easewithdata/playlists 
+Imp Topic for interview: =>  https://medium.com/@nishasreedharan/data-engineer-interview-preparation-complete-guide-98a9d16f6889
+Imp script: => https://medium.com/@sauravkumarrajjoli/8-automation-scripts-that-save-weeks-in-data-migration-d8f767b9a669 
+Approach - https://medium.com/@workwithalam/from-confusion-to-clarity-my-proven-approach-to-data-engineering-interview-prep-%EF%B8%8F-ea49f0d6a90a  
+System Design Link: https://bugfree.ai/practice/system-design?rdt_cid=5041946817894539996&utm_source=reddit_ads_system_design 
+=> imp video=> https://joshkobeng.medium.com/my-senior-data-engineer-interview-experience-c592a564d5e6 
+=> https://medium.com/@akanksha_singh/data-engineering-was-hard-until-i-learned-these-15-system-design-concepts-8a56f21f1070 
+=> Schema Design  and data modelling 
+https://medium.com/@akanksha_singh/from-raw-data-to-reliable-systems-the-power-of-data-modeling-in-data-engineering-e6d75d8710c1 
+https://medium.com/@akanksha_singh/from-chaos-to-clarity-advanced-data-models-every-data-engineer-must-master-8ac07dfd61a5 
+https://medium.com/projectpro/4-advanced-data-modelling-techniques-every-data-engineer-must-learn-1113bcf7f5e9 
+
+Data Engineering System Design :
+——————————————————
+https://medium.com/@seancoyne/preparing-for-the-data-engineering-behavioral-interview-1-of-2-1b729b89e4b1 
+
+https://medium.com/@seancoyne/sql-interview-patterns-you-must-know-for-data-engineers-137feb8f3b6c 
+https://medium.com/@seancoyne/leetcode-and-hackerrank-problems-you-need-to-practice-for-the-data-engineering-sql-interview-dddef57e7549 
+
+https://medium.com/@seancoyne/cracking-the-data-modeling-interview-part-1-an-overview-b09e7d5a7938 
+https://medium.com/@seancoyne/cracking-the-data-modeling-interview-part-2-normalization-indexes-and-partitioning-fac334d767ca 
+https://medium.com/@seancoyne/cracking-the-data-modeling-interview-part-3-slowly-changing-dimensions-e33118de7fd1 
+https://medium.com/@seancoyne/cracking-the-data-modeling-interview-part-4-designing-efficient-data-structures-625a78d5fe6c  
+https://medium.com/@psaumya567/major-data-modeling-mistakes-that-kill-scalability-and-how-to-fix-them-9dc78b683f08 
+
+https://medium.com/@seancoyne/acing-the-data-engineering-sql-interview-6c0eec62ade6 
+https://medium.com/@akanksha_singh/data-engineering-was-hard-until-i-learned-these-15-system-design-concepts-8a56f21f1070  
+https://medium.com/@seancoyne/preparing-for-the-data-engineering-system-design-interview-1-of-2-4d626a311182 
+https://medium.com/@seancoyne/preparing-for-the-data-engineering-system-design-interview-2-of-2-e18312ca19b3  
+https://medium.com/@akanksha_singh/system-design-for-data-engineers-65cf66abf325 
+
+https://medium.com/@seancoyne/data-engineering-practice-system-design-question-and-solution-streaming-ad32562ba954 
+https://medium.com/@seancoyne/data-engineering-practice-system-design-question-and-solution-batch-b971eae7637b 
+
+
+https://medium.com/area-21/data-modelling-interview-question-designing-movie-booking-bookmyshow-7fecea1fc1a9 
+ https://medium.com/@akanksha_singh/system-design-for-data-engineers-65cf66abf325  
+
+
+Mock interview:
+————————
+data modelling interview => https://www.reddit.com/r/dataengineering/comments/1ivgg7f/what_data_modeling_questions_have_you_encountered/ 
+https://www.linkedin.com/posts/shubhamwadekar_data-modelinginterview-questions-%F0%9D%97%A3%F0%9D%97%9B%F0%9D%97%94%F0%9D%97%A6%F0%9D%97%98-activity-7257028490724573184-ycdH/ 
+aws =>
+https://www.youtube.com/watch?v=gCuAzrU5-2w 
+https://www.youtube.com/watch?v=aZJXTRiDwCM 
+https://www.youtube.com/watch?v=T-p1qY4VfOo 
+- https://www.youtube.com/watch?v=UA4N1UElf-c 
+- https://www.youtube.com/watch?v=SRpbPq01MdQ 
+- https://www.youtube.com/watch?v=v3XZeya4QxE 
+- https://www.youtube.com/watch?v=Khnga97amEs 
+
+gcp=> https://www.youtube.com/watch?v=qZwffdeu1sY 
+Sumit mittal: https://www.youtube.com/watch?v=t3_ZzPoJx_Y  
+Datashow mock :=> https://www.youtube.com/watch?v=dOZvJMFJgyQ&list=PLiDUHlGx0KN8e7yU8tS0yP-zc3sNIPKdG&index=23 
+Shubham Wadekar => https://www.youtube.com/watch?v=iy6Mcsd5_NA&list=PLCa_L2rPtHOJ_YrPKJj23u6PO8Jn0RA7N 
+
+Sample Interview for Difficult Question:
+————————————————————
+https://medium.com/@nishchayagrawal/-c78ae8b7ca75 
+=> How you are going to deploy spark scala application in AWS EMR cluster? 
+Based on pyspark dataframe manipulations (withColumn, conditions, explode, etc) Be interactive.
+=>  Hadoop, aws, sql, python, Data warehouse, data lake, s3, Glue etl, athena, data governence, data domains, snowflake, star schema snowflake schema, pyspark, hive, HA cluster
+- Spark coding: https://www.youtube.com/watch?v=YUnZKKao3Sg&list=PL8kZcu-h_hhwEEEk0qYS0NOOjqhcZ-AoE 
+- https://medium.com/@sanjays_8381/data-engineering-interview-questions-with-expert-answers-a82474c8e5a8 
+- https://medium.com/@sauravkumarrajjoli/8-automation-scripts-that-save-weeks-in-data-migration-d8f767b9a669 
+- https://medium.com/@Rohan_Dutt/ranking-partitioning-and-deduplication-faang-sql-specialties-5b9adeb3fd8e 
+- https://medium.com/@rupeshkumarthakur11/must-know-pyspark-questions-to-ace-your-next-interview-part-i-0b6fc28abeb5  
+- https://medium.com/@rupeshkumarthakur11/real-interview-questions-for-data-engineering-roles-mid-to-senior-level-2729145835aa 
+- https://medium.com/@rupeshkumarthakur11/real-interview-questions-for-data-engineering-roles-mid-to-senior-level-part-ii-4db5c1c0d043 
+- https://medium.com/@rupeshkumarthakur11/real-interview-questions-for-data-engineering-roles-mid-to-senior-level-part-iii-3b2c33127881 
+
+MAANG+FAANG:
+————————
+https://medium.com/@nishchayagrawal/-c78ae8b7ca75 
+https://medium.com/@sanjays_8381/data-engineering-interview-questions-with-expert-answers-a82474c8e5a8 
+- Nischay Agarwal:  https://medium.com/@nishchayagrawal 
+- VVI:  https://www.reddit.com/r/dataengineersindia/comments/1jir8qo/my_data_engineer_interview_experience_at_an/#:~:text=Despite%20performing%20well%20in%20both,free%20to%20drop%20any%20questions 
+- https://medium.com/@nishchayagrawal/data-engineer-interview-experience-for-top-product-based-mnc-maang-companies-for-freshers-c8ef2f99503d 
+- https://medium.com/@workwithalam/from-confusion-to-clarity-my-proven-approach-to-data-engineering-interview-prep-%EF%B8%8F-ea49f0d6a90a  
+- All FAANG - https://leetcode.com/discuss/post/5150339/data-engineer-interview-experiences-by-a-pegd/ 
+- Video experience: https://www.youtube.com/watch?v=YUnZKKao3Sg&list=PL8kZcu-h_hhwEEEk0qYS0NOOjqhcZ-AoE 
+- Manish kumar => https://www.youtube.com/watch?v=R1_dGTDRFp8&list=PLTsNSGeIpGnFBjVePu_6ZQVvmgHChBh5L 
+- Intuit: https://www.linkedin.com/posts/shashank219_dataengineering-interview-experience-activity-7328291508216918016-uABL/ 
+- epam - https://medium.com/@anupchakole/epam-data-engineering-interview-questions-17c966a9f697 
+- Big4- https://medium.com/@AbiramiM/interview-experience-data-engineer-in-big4-deloitte-ey-b085f52d4c65 
+- Myntra: https://medium.com/@techrecruiter/a-day-in-the-life-of-a-myntra-data-engineer-an-intermediate-level-perspective-b8fbabc1a50f 
+- Paypal: https://medium.com/towards-data-engineering/paypal-data-engineer-interview-experience-2025-078fdb0215b3 
+- Altassian - https://medium.com/@goyalarchana17/atlassian-interview-experience-data-engineering-architecture-challenges-c9c5391a0a04 
+- Tiger analytics: https://medium.com/@anupchakole/cracking-the-tiger-analytics-data-engineering-interview-0a72514e0b4a 
+- https://medium.com/towards-data-engineering/data-engineer-interview-experience-3-yoe-at-tiger-analytics-f7f5a8dd4da3 
+- Messho -  https://medium.com/@nishchayagrawal/data-engineer-interview-experience-at-meesho-indian-top-startup-2657aa9c8521 
+- Expedia: https://blog.dataengineerthings.org/my-expedia-interview-experience-for-senior-data-engineer-role-b0526460767e 
+- zs-associates - https://medium.com/@nishchayagrawal/data-engineer-interview-experience-at-zs-associates-07c5bf706519 
+- Snowflake: https://medium.com/@nishchayagrawal/data-engineer-interview-experience-for-snowflake-company-b316e20ca22e  
+- JP Morgan - https://medium.com/@nishchayagrawal/data-engineer-interview-experience-at-jp-morgan-chase-6322ff0ffe01 
+- https://www.preplaced.in/blog/data-engineer-interview-experience-jp-morgan-chase 
+- Morgan Stanely : https://medium.com/@nishchayagrawal/how-i-crack-data-engineer-role-at-morgan-stanley-my-journey-revealed-180-salary-hike-aeab6bfc8034 
+- Walmart - https://medium.com/@nishchayagrawal/data-engineer-walmart-interview-experience-c8c906b684c6 
+- https://medium.com/@AbiramiM/interview-experience-data-engineer-in-walmart-37daaaa7be19 
+- Amazon:  https://medium.com/@nishchayagrawal/amazon-data-engineer-interview-experience-amazon-interview-questions-300-salary-hike-5b48bbb5148b  
+- Quora: https://medium.com/area-21/data-engineering-interview-experience-of-quince-9a09fdb30d22 
+- microsoft: https://medium.com/@aminsiddique95/my-microsoft-data-engineering-interview-from-sql-nightmares-to-system-design-dreams-9023a560ba4f 
+- Expedia: https://blog.dataengineerthings.org/my-expedia-interview-experience-for-senior-data-engineer-role-b0526460767e 
+- Apple: https://medium.com/@goyalarchana17/apple-data-engineer-interview-experience-what-to-expect-how-to-prepare-fde9f0d406cf  
+- Media.net: https://medium.com/@itsadityagupta/data-engineer-interview-experience-at-media-net-2023-6b7295493a3e 
+- 
+Less experience :
+—————————
+- https://joshkobeng.medium.com/my-first-data-engineering-job-interview-7ef31c6d91f6 
+
+Imp Topic:
+—————
+https://medium.com/@rupeshkumarthakur11/aws-glue-comprehensive-guide-f4f9963f90f5 
+
+
