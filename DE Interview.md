@@ -3,12 +3,13 @@ Service based Company  Interview:
 python:
 -------
 Q. https://www.youtube.com/watch?v=B84tSLggiLA&list=PLqGLh1jt697wQTamFvXx_Odlm-Wg3zbxq&index=15
-Q. Filter, map reduce in python?
+Q. Filter,map reduce in python?
+Q. Python lambda functions, why it is faster
 Q. Difference among list and tuple , set ,dict ? 
 Q. How hash collision  we can stop in dictionary 
 Q. Shallow vs deep copy? explain with a example ?
-Q. what is higher order function? what is closure? What is decorator? What is advantage of decorator? Write custom decorator with parameter and without parameter. Where you have used decorator in your application , give example?
-Q.  Generator vs iterator . Which one is more performant ? Why?
+Q. Decorators.Explain  with code having params?
+Q.  Generator vs iterator . WHich one is more performant ? Why?
 Q. File handling with scenarios based question 
 Q. Focus on Python Mutithreading concept 
 Q. "123a!", it should return "112233aa!!" 
@@ -35,7 +36,7 @@ Q. How to implement end to end SDLC process
 Q. What do you do on daily basis in ur project?
 Q. Why you want to join this company(ex google )
 Q. Explain ur project architecture -(S3 bucket ->data brick->Apache Spark ->S3 )
-Q. What is the volume of data you have  worked on? 
+Q. What is the volume of data you have have worked on? 
 Q. What is data volume in your day to day pipeline and how to resolve scalability challenges i.e day by day data volume increases incrementally?
 Ans: size of data ,source of data, pipeline how it is architected, quality of data and pipeline issue resolution , spark handling the data , version ,schema evolution etc, scalability of data handling => in config file we keep optimal size of driver and executor memory 
 Q. How do you optimize a data pipeline for better performance and scalability?
@@ -52,6 +53,7 @@ Q. What are the challenges you faced implementing spark jobs and how did u resol
 Q. Spark Tool Including data brick
 Q. What micro service you have worked upon?(API, FastApi)
 
+
 Deployment
 —-----------
 Q. How did you handle production deployment in your project? Ans- Expalin versioning,CI,CD,artifact movement, monitoring,logging,alerting in production env
@@ -65,7 +67,6 @@ Q. Have you worked on security?
 Q. have you worked on docker and Kubernetes?What all things you know about Kubernetes? how Kuberenets work ?
 
 Project Related Question:
-—————————————
 https://www.youtube.com/watch?v=diHUuPIaMpI&t=33s 
 Infra Related 
 Q1. What cluster manager you have used in project? 
@@ -96,20 +97,6 @@ Business Related Question:
 Q1. Who is ur client ? 
 Q2. What is the impact of the project on business? Q3. What is the data domain?
 
-DE Basic :
-—————
-1. Project tech stake and architecture?
-2. List of file format/storage format used in hive? Like  orc. avro,parquet? Explain from your project and why u have selected orc or parquet?
-3. What is different between partition and bucket? When to use partition?When to use bucket? Explain with 10 record file
-4. Repartition and coalesce ? Explain mechanism and performance impact?
-5. How hammy output task get created in spark?
-6. Write a spark word count program in pyspark? 
-7. Write a program to join two table by reading file using data frame save in orc ,Avro and parquet?
-8. I have two blocks in hdfs ,how many input  task count get created in spark?
-9. What is default partition in MapReduce and Spark? How it is creating partition ? Tell me formula with sample?
-10. Hive Bucket internal formula? 
-11. Hive acid table?We are using for OLAP not OLTP?
-12. How to create a hive acid table? Ans- enable txn 
 
 Spark Architecture:
 ------------------
@@ -395,3 +382,4 @@ Q. If my Kafka consumer is reading slow then how will you handle back pressure?
 Q. He asked about incremental load. I said streming and he asked me about checkpointing in streaming?
 Q. How checkpointing work in streaming?How you have used ? Where you are validating ? How the folder of check pointing forms ?Who creates these logs?
 Q. System design to build streaming solution?
+
