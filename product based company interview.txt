@@ -1,0 +1,213 @@
+Product Based Company interview :
+=> Meesho => https://medium.com/@nishchayagrawal/data-engineer-interview-experience-at-meesho-indian-top-startup-2657aa9c8521 
+=> Walmart => https://medium.com/@nishchayagrawal/data-engineer-walmart-interview-experience-c8c906b684c6 
+=> JP Morgan Chase=>  https://medium.com/@nishchayagrawal/data-engineer-interview-experience-at-jp-morgan-chase-6322ff0ffe01 
+=> snowflake=> https://medium.com/@nishchayagrawal/data-engineer-interview-experience-for-snowflake-company-b316e20ca22e 
+=> amazon => https://www.youtube.com/watch?v=v3Plaw6r7HU&t=1218s 
+Project Mgmt:
+———————
+1. He asked me about Agile. I explained Agile with an agile framework (Scrum) by taking concepts of a sprint, Jira Board, and iterative approach in detail. Why Agile is preferred over the waterfall model. 
+2. Some questions on JIRA or Scrum Different Calls. How you will manage multiple tasks using Agile methodology.
+3. Question on Cost Optimisation:
+* ✅Can you share an example of a project you worked on that had a significant impact on your organization? ✅ How did you contribute to cost optimization initiatives while working with cloud technologies? ✅ Could you describe a specific cost optimization strategy you implemented in the cloud and its results?
+1. How you will do cost optimization if we want to save cost for AWS services? He asked me to explain this scenario by taking some scenarios lets suppose you have lot of data stored in S3 bucket which has not recently been used. There are of lot demand instances running how you will tackle it. So I explained him with the detailed on S3 bucket glacier, policies management, IAM roles, Use of spot instances instead of demand instances
+2. He asked me to explain the Kubernetes cluster that I used in my project. 		
+3. He gave me a scenario if I have to migrate the data from on-prem to off-premise cloud (AWS). what are the steps you will take care of while migrating data & ETL jobs?
+4. How I set the ETL pipeline on Databricks by migrating from on-premise service to cloud service Databricks, Azure Cloud with Snowflake Data Warehouse
+5. He asked me some questions on Pagerduty or the tools for the alerting mechanism
+6. Some questions on the Job Scheduler or SLA you set for the Job. What you will do if the SLA misses the job?
+7. Write the Custom API to hit the request to the backend server running on Kubernetes or Docker from the frontent application to get customer data example how many orders are placed by the user based on user ID. Database is PostgreSQL or can be a Delta Lake table
+Teraform & Jenkins
+------------------
+1. Question on write terraform configuration for configuring Ec2 machine (to understand how I used teraform in my previous company)
+2. Question on explain the lifecycle of teraform when you want to deploy new cluster on AWS. I explained this with the example of CloudFormation Stack AWS Service for deployment of presto cluster
+3. He asked suppose you want to deploy code on the production environment. I explained this by taking the example
+
+
+SQL:
+———
+1. Join, group by , cte ,Window function - dense rank
+2. tricky join question 
+3. Use either window function or procedure?
+Q1. How to find highest salary in each dept ?
+Q.2 How to find median salary in each dept ?
+Q3. Employee earning more than its manager?
+Q4. The Employee table holds all employees including their managers. Every employee has an Id, and there is also a column for the manager Id. Write a SQL query that finds out managers with at least 5 direct report. 
+Q5. For the above table, your SQL query should return: How to find the nth highest salary for each department using Window Function or without using window function.
+Q6. Given an employee table with attributes are empId, empSalary, and empDeptId and department table with attributes deptId, depName, and CourseOffered. I was asked to write an SQL query to find the employee which has the highest salary in each department using windows functions on the notepad. I used the dense_rank window function for constructing SQL queries. I was asked to explain the reason for using dense_rank instead rank function.
+Q7.  write a SQL query to find the consecutive number, which appear at least thrice one after another without interruption 		
+Q8. Write an SQL query to find employee_id of all employees who directly or indirectly report their work to the head of the company. The indirect relation between managers will not exceed 3 managers as the company is small. (Reference https://leetcode.ca/2019-05-23-1270-All-People-Report-to-the-Given-Manager/)
+
+
+Python:(easy and medium level question ds )
+------
+1. pickling/unpickling in python 
+2. json/csv/parquet file loading and unloading in python 
+3. no of each occurence in list 
+4. Print duplicate no in list  
+5. Trapping Rain Water
+6. Pandas - read csv and apply transformation 
+7. Write code if you have three files & you want to consume data from these files in the pandas dataframe. He asked me to remove the columns from this data frame & remove any rows based on index position. If we want to search string in the whole data frame. how you will find them. So he asked me to write code 
+
+
+Pyspark:
+————
+Q. Suppose you have two dataframe df1 and df2, both have the below columns. df1 => id , name ;  df2 => id , country, address, city, count
+i) Suppose you want to join two data frames and then apply filter where the country is Singapore.
+ii) Then pivot the output dataframe.
+iii) Finally you have to showcase the city of Singapore first whose count of people is highest on top. I used window functions
+
+
+1. Explain the workings of parquet & how parquet stored data in the columnar format. How it differs from the delta table format
+2. He asked me whether the below function or logic is action or transformation.  df=spark.read.format(“delta”).load(“/parquet/snapp.parquet”)
+3. How do you handle the skewness in the data? What is the salting mechanism and broadcast join? I explained by taking practical examples on the notepad by having one large dataset & small dataset stored in CSV format 
+4. Suppose I have 10 workers’ machines & total of 100 GB RAM with 25 Cores.
+* i) How many executors will be there?
+* ii) What is the size of each executors in terms of CPU or memory
+* iii) When OOM occurs in Spark Driver
+* give the answer to this question based on the Databricks Lakehouse cluster.
+5. Have you done data compaction? What is delta log vs log files in delta lake
+6. How Delta Lake stores the transaction history in the S3 Bucket
+7. Explain the architecture of Hive Metastore
+8. Do you know how Presto fetches the data from the data catalog? How does Presto work faster for complex queries?
+9. Write the complete steps to design the Data governance policies how you will implement as if you want to build the data catalog system from scratch?
+
+
+
+Big Data:
+--------
+Kafka, ETL concepts
+
+Spark:
+———
+=> https://medium.com/@nishchayagrawal/-c78ae8b7ca75 
+1. I was asked how you capture the event logs or what is happening on the data bricks and what user activities such as who is creating the cluster & who is running the jobs. So for that I explained the open source project I used Overwatch (Databricks Open Source Job)
+2. What is Avro file format & what is its significance in delta tables?
+3. Difference between presto vs. spark underlying architecture
+4. Can Presto work with Near Real-Time Data ( Streaming Data Source)?
+5. How to onboard delta lake catalog to Presto  	
+6. What do you think about Data uncertainty? 
+7. How did you develop the Datahub using Open Source Projects such as Spline & Datahub?	
+8. Questions asked based on Spark monitoring & Spark performance management. I explained all the answers in deep dive by taking practical examples.
+9. Dataframe is taking lot of time to load data in parquet format in delta table, how u will optimise it? Ans- increase partition 
+10. He asked me to write code for uploading Parquet files on the S3 bucket using the boto3 library (as I worked on AWS). I wrote the code for the same using Python and boto3 library on a notepad.  
+11. Some questions on Spark Coding(incremental data load). he asked me to write code to read data from delta lake (S3 bucket) & run the upsert command to update the data if the data already exists based on the primary key & insert the data if the data does not exists. I wrote the code using the DataFrame
+12. how to do data validation i. reconciliation  using spark? Ans - row count check ,md5 check ,delta method to check data discrepency is not more than 1 percent?
+13. Spark Architecture
+14. Hadoop vs Spark .Why map reduce is 10 times slower than spark?
+15. how Logical plan works when you submit spark query
+16. Questions on Spark Optimisation such as Skewed Join, Broadcast Join, CBO & repartion vs coalesce, AQE, bloom filter . Questions on Spark Tungsten & Catalyst Optimise
+17. Repartiotion vs coalesce 
+18. Spark how execute in step by step? Ans- explain in detail every step
+19.  How to optimise spark code? Ans- AQE, broadcast join, cache
+20.  cache vs persist? 		
+21. Imagine you have a Spark job that involves working with custom data types that are not supported out-of-the-box by Spark. How would you handle these custom data types in Spark? 		
+22. How to control the number of mappers in map-reduce jobs.
+23. Spark Lineage
+24. Experimentation (A/B testing) & on presto architecture
+25. You have a Spark job that is taking longer than expected to complete. What steps would you take to identify and troubleshoot performance bottlenecks?
+26. You have a Spark cluster with limited resources. How would you allocate resources and configure the cluster for optimal performance?  
+27. two questions were asked based on batch processing & stream processing using Spark
+
+Java:
+——
+1. Now questions start on Java & Advanced Java: Questions on Java based on Java collection such as Interface, Map, LinkedList design & Garbage collection
+* i) He asked me to write the java code to run the garbage collection using GC collector thread
+* ii) He asked me to explain the concept of multithreading. Then he asked me to write code for Synchronisation using Synchronised Thread
+* iii) Some Questions on Serialisation vs Deserialisation.
+* iv) Explain the use case of the transient keyword in java.
+* i) What is the Semaphore variable? How do you prevent deadlock in the system
+* ii) He asked me to complete the Semaphore code for the synchronisation achievement. So I wrote Semphore in Java
+* He asked me to write the code in Java using File Input Stream Reader Class to read the data from the local file & print the output of the file on the console. Then he asked me some questions on OOPS
+
+Streaming:
+—————
+1.   how I design the ETL pipeline using stream kafka or flink if you get new usecases by creating high level design
+2. He started with an explanation of Spark Streaming & how the streams were created for the real-time data.
+3. Finally he asked me to explain the architecture of Kafka and Spark Streaming.
+4. What is the difference between Spark Streaming vs Structured Streaming? I explained with real-life example 	
+5. He asked me how you are consuming data & what approaches we used to consume data in e-commerce applications. I explained how we can expose API & capture event data then send data to Mixpanel and then to Kafka using Kafka streams. Then we can run batch pipelines such as ETL pipelines which are running on Databricks (using custom jobs) then we can dump the data into Delta Lake 
+6. He asked me to explain the end-to-end pipeline of Datahub Spline (Open source project I worked on how Spark listener captures the upstream tables & downstream tables. So I explained them by using notepad
+7. He asked me to explain the conditions you will take care of while you are getting lot of events data from Kafka & some data from RDBMS, and how you will design the ETL pipeline to capture these data in near-real time for the Kafka it possible but you can possible if any new data change sin RDBMS how you can get instantly. I explained that the Change in data capture of RDBMS with Kafka event
+8. Does Delta Lake support upserts?
+9. Then he gives one problem statement to write the spark code. Suppose I have streaming data coming from Kafka continuously & loaded into the Delta Lake actual data will be stored in the S3 bucket but metdata will be stored in the Hive Metastore or thrift server. He asked me to build the complete ETL pipeline by writing Kafka code to fetch the data from the event-drive platform which consumes the event every 1 minute of size 100 KB each time & dumps the data into Delta Lake in parquet or JSON format. Then write the data frame code to clean the event whose event id has null user_id & dump the final result into a different zone of the delta lake like the bronze zone.
+10. 
+
+
+Databricks:
+----------
+1. He asked me the difference between managed vs unmanaged tables. He started on Databricks. He asked me how Databricks creates clusters. Are databricks cluster standalone or Yarn mode cluster?
+2. Some questions on Databricks Job Cluster, SQL Endpoint (How Photon working in SQL Warehouse) 		
+3. How you can calculate the cost for the Databricks cluster? He asked this question because I mentioned Databricks in my resume. I explained by taking the example of DBU
+4. What is delta table?
+5. Delta format vs parquet format?
+6. Does Delta Lake support upserts?
+
+Hadoop ecosystem:
+------------------
+1. Hadoop architecturte
+2. Lot of questions on Mappers & Combiner from Map Reduce. How to make the mapper to one by using which property.
+3. How we can reduce no of mapper . How to manage no of reducer in map reduce 
+4. How to rackness? How to achieve high availabality in hadoop? How the rack awareness works?
+5. FS Image 
+6. edit log 
+7. Explain the concept of data locality in Hadoop, and why is it important for performance.
+8. Finally, he asked me question on the Sqoop. How you will import 5 tables in sqoop from the external database? I wrote the command for the same
+
+
+Design and Modelling:
+--------------------
+1. What is the difference between Datalakehouse & Delta lake vs data warehouse?
+2.  Sql vs No Sql
+3. OLAP vs OLTP Ans- Multidimesnsion modelling ,single dimensional modelling, cube design 
+4. What is the difference between Snowflake vs Star Schema
+5.  Different type of SCD 
+6. What is SCD-2 Type with Example and how you will be implement? 
+7. He asked about some concepts of Normalisation. He asked me to write an SQL query on SCD-1 or SCD-3 Slowly Changing Dimension
+8. Normalisation Concepts & 
+9. How to achieve normalisation in db? explain all form?
+10. He asked me to share a screen to create the data model on the ETL Pipeline which takes data from the database & dumps data into the data warehouse Snowflake. Define the schema for sample tables that are used in Morgan Stanley. 
+11. Design data model for movie theatre ? A. Table name B. Schema (star and snowflake, fact use 3rd norm), define primary and foreign key
+      1. Star vs Snowflake
+      2. fact vs dimesional 
+1. We have to develop pipeline which are taking data from multiple sources like db2,sybase and kafka and event source? How to do transform on top of data?how do dump in final destination like redshift? Ans: Databricks and redshift 
+Q. The interview starts with the System Design. I was asked to design the Mixpanel system (which is event driven system) because I used Mixpanel in the Meesho. So I opened the draw.io & started making how the Mixpanel works. How the events are captured by different systems such as Android App, Web App & IOS App.
+Q.1. How the load balancer works in the Mixpanel.
+Q.2. How the requests are being handled. Let’s suppose you open the Presto URL on Chrome, then this request goes to the DNS for IP address resolution then goes to the load balancer then the target gateway then finally to the Presto Coordinator. So I was asked to explain each concept
+Q.  create a system design for the E-commerce company Flipkart. How is Flipkart working? What are the database we have to use to support streaming data? I explained each component that are being used to create HLD of E-commerce such as load balancer, caching, proxy server, database, Kafka, Event-driven platform, Sprintgboot, Custom API, Web service, JPA service, AWS cloud I used to take example & explain the components with the use case.
+Q. How you design the data warehouse from scratch if you have new requirements. So that time I explained, the Snowflake & Databricks that I set in Morgan Stanely from the beginning
+
+
+
+
+Airflow:
+————
+1. API calling with airflow
+2.  airflow operators, hooks, airflow scheduler working
+3. How Airlfow Stored logs in the S3 bucket & how the backend database of airflow plays an essential role
+4. How Airflow Kubernetes works using Pod Concepts
+5. How the Airflow scheduler works with Worker machine with the webserver
+6. Difference between Container Deployment vs. Stateful Deployment in K8s. Explain how Kubernetes manages the fault tolerance
+
+Snowflake:
+—————
+1. How you can build ETL pipeline in snowflake
+2. How to capture the changes if new records insert into source tables, how snowflake will capture the records, then run the ETL job using airflow.
+3. How API works & asked me to design the photon engine backend architecture used in SQL warehouse because I worked
+4. Why we need change data capture using snowflake 		
+5. which tech stack I have worked on snowflake. How you deploy snowflake on azure. What are the differnet cluster size you have considered while designing the datawarehouse. What is the things you have taken care to integrate snowflake with databricks
+6. 
+7. 
+
+
+Behavior:
+---------
+1. How to manage task in current script?
+2. Task dependency in other project? He gave me scenario-based questions
+3. What would you in a situation where a business user asks you to add a data element to the reporting output that you know provides no value and will slow down performance
+4. Let’s suppose you have been given 3 tasks in sprint, & you are suddenly working on suddenly new task which is P1. So how you will handle these 4 tasks in one sprint & how you connect with your manager for updates on your task
+5. Are you able to relocate because this position is hybrid? So I mentioned yes I can relocate
+6. How you can overcome challenges faced in the team if your team is not able to cop up with you in solving issues?
+
+
+
