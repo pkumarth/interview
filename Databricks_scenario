@@ -1,0 +1,33 @@
+Scenario 1: Optimizing Slow Joins
+----------------------------------
+Scenario: You are joining a 1TB transaction table with a small 10MB dimension table, and the job is running very slowly.
+Solution: 
+- Use a BROADCAST hint: The small dimension table is ideal for a broadcast join. This optimization sends the smaller table to the memory of all worker nodes, eliminating the need for a costly data shuffle of the large fact table.
+- Enable Adaptive Query Execution (AQE): Spark 3.0+'s AQE feature can automatically detect and perform a broadcast hash join at runtime if the dimension table size is within the threshold, even without the explicit hint.
+- Optimize storage: Ensure both tables are in an optimized format like Delta Lake, which uses techniques like data skipping and Z-ordering to improve query performance.
+
+Scenario 2: Handling a Failed Production Pipeline
+-------------------------------------------------
+Scenario: A critical data ingestion pipeline failed overnight while writing to a Delta table. How do you debug and recover the data to meet production SLAs?
+Solution: 
+Review logs: Start by reviewing the job logs in Databricks Workflows to pinpoint the exact error (e.g., schema mismatch, data corruption, network issue).
+Use Delta Lake Time Travel: If the table was partially written or corrupted, you can use the Time Travel feature to revert the table to a stable, previous version or timestamp using RESTORE TABLE or VACUUM with retention.
+Fix and restart with Auto Loader/Checkpoints: If using Structured Streaming with Auto Loader, restart the job from the last successful checkpoint to ensure exactly-once processing and schema evolution handling. 
+
+Scenario 3: Designing a Scalable Data Lakehouse
+-------------------------------------------------
+Scenario: You need to design an enterprise-grade data platform from raw data ingestion to consumption using Databricks.
+Solution:
+Implement a Medallion Architecture: Structure data into three layers:
+Bronze: Ingest raw data as-is with minimal transformations (e.g., adding ingestion timestamps).
+Silver: Cleanse, filter, and enrich Bronze data. Apply schema enforcement and data quality checks (e.g., using Delta Live Tables Expectations).
+Gold: Create aggregated, business-ready data optimized for BI and analytics, potentially using Databricks SQL.
+Leverage Unity Catalog: Use Unity Catalog for centralized data governance, access control (RBAC), and automated data lineage tracking across all layers. 
+
+Scenario 4: Managing Schema Drift in Streaming Data
+-------------------------------------------------
+Scenario: Your downstream BI dashboards fail because of unexpected schema changes (schema drift) in the incoming data stream.
+Solution:
+Use Auto Loader with schema evolution: Configure Auto Loader to handle schema changes gracefully using options like cloudFiles.schemaEvolutionMode to infer and merge new columns automatically.
+Enforce schema explicitly: Define an explicit StructType schema for your DataFrame to prevent unexpected data types or columns from breaking the pipeline.
+Use Delta Live Tables Expectations: In a DLT pipeline, define data quality "expectations" to flag, drop, or quarantine records that do not meet the required schema, preventing bad data from propagating downstream.
