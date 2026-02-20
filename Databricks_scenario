@@ -4,6 +4,8 @@ https://medium.com/@anubhav020909/day-12-scenario-based-azure-databricks-questio
 https://medium.com/@pawan4data/databricks-failure-handling-best-practices-for-reliable-data-engineering-52c39ea8996e
 https://medium.com/@pawan4data/how-to-handle-bad-data-in-databricks-pipelines-1e0120be0bd2
 
+https://medium.com/@pawan4data/70-essential-databricks-interview-questions-answers-for-data-engineers-41099f8b5072
+
 Scenario 1: Optimizing Slow Joins
 ----------------------------------
 Scenario: You are joining a 1TB transaction table with a small 10MB dimension table, and the job is running very slowly.
