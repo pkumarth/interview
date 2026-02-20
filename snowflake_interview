@@ -1,4 +1,5 @@
 Performance & Cost Optimization Scenarios
+-----------------------------------------
 "A specific stored procedure, executed daily at 7 AM, is causing high CPU I/O and impacting other jobs. How do you quickly resolve this issue?"
 Answer: The immediate solution is to assign a dedicated virtual warehouse to the resource-intensive stored procedure. This isolates its compute usage, preventing it from affecting other workloads running on a shared warehouse. For long-term optimization, one might analyze the query profile for bottlenecks.
 "A query executed by one business analyst returns results immediately, but the same query run by a new analyst takes 5 minutes. What could be the issue?"
@@ -8,10 +9,9 @@ Answer: I would use the ACCOUNT_USAGE schema views (specifically QUERY_HISTORY a
 Adjusting warehouse auto-suspend and auto-resume settings.
 Right-sizing virtual warehouses for specific workloads.
 Implementing resource monitors to set credit limits and suspend warehouses when thresholds are met. 
-LinkedIn
-LinkedIn
- +5
+
 Data Ingestion & Architecture Scenarios
+-----------------------------------------
 "A firm is using Snowpipe to ingest streaming data from an ADLSg2 container. Will the order of files loaded into Snowflake always be the same as they arrive in the container, and how is data deduplication handled?"
 Answer: The order of file loading is not necessarily guaranteed to be the same as the arrival order. Data deduplication in Snowpipe is handled by Snowflake which generates a unique ID for each file processed, ensuring a file that has already been processed is not ingested again.
 "How would you design a scalable data warehouse for an e-commerce website with over 500,000 rows of incoming data per hour?"
@@ -20,17 +20,15 @@ Using a structured relational data model (e.g., star schema) since the data is l
 Leveraging Snowpipe for continuous, event-based data ingestion to handle the high velocity of incoming data.
 Separating workloads using multiple, independently scaled virtual warehouses for ingestion, transformation, and reporting.
 Considering hourly partitioning or clustering keys on large tables only when necessary, to optimize query performance through micro-partition pruning. 
-LinkedIn
-LinkedIn
- +4
+
 Security & Governance Scenarios
+-----------------------------------------
 "How do you implement row-level security (RLS) for different departments in a shared table?"
 Answer: RLS can be implemented using row access policies. A policy is created that defines which rows are visible based on the user's role or other context, and then applied to the target table. This allows different departments to view only the relevant data within the same physical table.
 "You need to share a subset of a production database with an external vendor securely, who uses a different cloud provider."
 Answer: I would use Snowflake's secure data sharing feature. This involves creating a share object with access to specific data objects (tables, secure views, etc.) and sharing it with the vendor's Snowflake account (or a reader account if they don't have one). Since Snowflake separates storage and compute, no data is actually duplicated or moved across clouds, ensuring secure, zero-copy access. 
-LinkedIn
-LinkedIn
- +4
+
 Troubleshooting & Data Recovery
+-----------------------------------------
 "An ETL job failed midway, but some data was loaded into the target table. How would you debug and recover the data?"
 Answer: I would use the QUERY_HISTORY views in the INFORMATION_SCHEMA or ACCOUNT_USAGE to analyze the queries that were part of the failed job. To recover the data, I would leverage the Time Travel feature. Using UNDROP TABLE or SELECT ... BEFORE (TIMESTAMP => ...) commands, I could query or restore the table to its state before the problematic loads occurred
